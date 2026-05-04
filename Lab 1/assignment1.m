@@ -19,11 +19,14 @@ function value = h_func(n)
     end
 end
 
-n = -10:10;
+n = -6:6;
 x = arrayfun(@x_func, n);
 h = arrayfun(@h_func, n);
 
 y = conv(x, h, "same");
 
-stem(n, y)
-
+figure;
+stem(n, y);
+ylabel("y[n]");
+xlabel("n");
+ylim([0,2.2]);
