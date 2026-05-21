@@ -21,7 +21,7 @@ y = y(:).*h(:); % what beautify syntax this language has
 
 % stem(y)
 
-audiowrite("tone_out.wav", y, sample_rate)
+audiowrite("Faded_audio_ex2_b.wav", y, sample_rate)
 
 end
 main()
