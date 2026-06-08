@@ -1,3 +1,4 @@
+% a) Find fu
 [y, fs] = audioread('audio_sin.wav');
 fprintf('fs = %.2f Hz\n', fs);
 
@@ -5,10 +6,10 @@ N = length(y);
 Y = fft(y);
 f = fs*(0:floor(N/2))/N;
 
+% Ignore lower frequencies
 P2 = abs(Y/N);
 P1 = P2(1:floor(N/2)+1);
 P1(2:end-1) = 2*P1(2:end-1);
-
 min = 200;
 valid = f > min;
 
@@ -18,13 +19,14 @@ fu = fu(idx);
 
 fprintf('fu = %.2f Hz\n', fu);
 
+% b) Apply filter to audio
 y_filt = filter(bandstopfir1, y);
 player = audioplayer(y_filt, fs);
 play(player);
 
-Y  = abs(fft(y));
+Y = abs(fft(y));
 Yf = abs(fft(y_filt));
-Y  = Y(1:floor(N/2));
+Y = Y(1:floor(N/2));
 Yf = Yf(1:floor(N/2));
 f_plot = f(1:floor(N/2));
 
