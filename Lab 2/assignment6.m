@@ -9,5 +9,5 @@ for k = 1:3
     h1 = h.*wr;
 
     figure;
-    freqz(h);
+    freqz(h1);
 end
