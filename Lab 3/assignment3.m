@@ -23,5 +23,5 @@ for i = 1:length(nums)
     y_m = y-mean(y);
     rho(i) = sum(x1_m.*y_m) / sqrt(sum(x1_m.^2)*sum(y_m.^2));
 
-    fprintf('N = %d, rho = %.4f\n', N, rho(i));
+    fprintf('N = %d, rho = %.6f\n', N, rho(i));
 end
